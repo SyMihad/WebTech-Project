@@ -1,0 +1,25 @@
+<?php
+    session_start();
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $userName = $_POST['userName'];
+    $email = $_POST['userEmail'];
+    $phone = $_POST['userPhoneNum'];
+    $password = $_POST['userPassword'];
+    $confirmPassword = $_POST['userConfirmPassword'];
+
+    if($password != $confirmPassword){
+    header('location: registration.php?err==passNotMatch');
+    }
+    else if($firstName=="" or $lastName=="" or $userName=="" or $email=="" or $phone=="" or $password=="" or $confirmPassword==""){
+    header('location: registration.php?err=null');
+    }
+    else{
+        $userData = "\r\n".$firstName."|".$lastName."|".$userName."|".$email."|".$phone."|".$password;
+        $file = fopen("dataFiles/customer.txt",'a');
+        fwrite($file, $userData);
+        fclose($file);
+        header('location: home.php');
+    }
+
+?>
