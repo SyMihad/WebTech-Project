@@ -16,7 +16,7 @@
     }
     else{
         $userData = "\r\n".$firstName."|".$lastName."|".$userName."|".$email."|".$phone."|".$password;
-        $file = fopen("dataFiles/customer.txt",'a');
+        $file = fopen("customer/data/customer.txt",'a');
         fwrite($file, $userData);
         fclose($file);
         header('location: home.php');

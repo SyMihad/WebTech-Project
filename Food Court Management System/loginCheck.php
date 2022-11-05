@@ -12,7 +12,7 @@ else if(($username!='' and $password!='') and $userType==''){
 }
 
 if($userType=='customer'){
-    $file = fopen('customer/customer.txt', 'r');
+    $file = fopen('customer/data/customer.txt', 'r');
     $status = false;
     while(!feof($file)){
         $data = fgets($file);
@@ -22,7 +22,10 @@ if($userType=='customer'){
         }
     }
     if($status){
-        header('location: customer/customerHome.php');
+        setcookie('status', 'true', time()+60*60*72, '/');
+        setcookie('fullname', $user[0]." ".$user[1], time()+60*60*72, '/');
+        setcookie('username', $username, time()+60*60*72, '/');
+        header('location: customer/customerDashboard.php');
     }
     else{
         header('location: home.php?err=invalid');
@@ -35,7 +38,7 @@ else if($userType=='admin'){
         $status = true;
     }
     if($status){
-        header('location: admin/admin.php');
+        header('location: admin/adminDashboard.php');
     }
     else{
         header('location: home.php?err=invalid');
@@ -43,7 +46,7 @@ else if($userType=='admin'){
 }
 
 else if($userType=='foodCourtManager'){
-    $file = fopen('foodCourtManager/foodCourtManager.txt', 'r');
+    $file = fopen('foodCourtManager/data/foodCourtManager.txt', 'r');
     $status = false;
     while(!feof($file)){
         $data = fgets($file);
@@ -53,7 +56,7 @@ else if($userType=='foodCourtManager'){
         }
     }
     if($status){
-        header('location: foodCourtManager/foodCourtManager.php');
+        header('location: foodCourtManager/foodCourtManagerDashboard.php');
     }
     else{
         header('location: home.php?err=invalid');
@@ -61,7 +64,7 @@ else if($userType=='foodCourtManager'){
 }
 
 else if($userType=='restaurantManager'){
-    $file = fopen('restaurantManager/restaurantManager.txt', 'r');
+    $file = fopen('restaurantManager/data/restaurantManager.txt', 'r');
     $status = false;
     while(!feof($file)){
         $data = fgets($file);
@@ -71,7 +74,7 @@ else if($userType=='restaurantManager'){
         }
     }
     if($status){
-        header('location: restaurantManager/restaurantManager.php');
+        header('location: restaurantManager/restaurantManagerDashboard.php');
     }
     else{
         header('location: home.php?err=invalid');
@@ -79,7 +82,7 @@ else if($userType=='restaurantManager'){
 }
 
 else if($userType=='restaurantOwner'){
-    $file = fopen('restaurantOwner/restaurantOwner.txt', 'r');
+    $file = fopen('restaurantOwner/data/restaurantOwner.txt', 'r');
     $status = false;
     while(!feof($file)){
         $data = fgets($file);
@@ -89,7 +92,7 @@ else if($userType=='restaurantOwner'){
         }
     }
     if($status){
-        header('location: restaurantOwner/restaurantOwner.php');
+        header('location: restaurantOwner/restaurantOwnerDashboard.php');
     }
     else{
         header('location: home.php?err=invalid');
