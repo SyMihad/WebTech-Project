@@ -12,14 +12,14 @@ if(!isset($_COOKIE['status'])){
 
 <html>
     <head>
-        <title>Manager Dashboard</title>
+        <title>View Food Item</title>
     </head>
     <body>
         
             <fieldset>
                 <legend><p  style="font-size:20px;">Food Court Management System</p></legend>
                 <table align="center" height="700px" width="700px"  border="1">
-                    <tr><td align="center"><h1>Manager Dashboard</h1></td></tr>
+                    <tr><td align="center"><h1>View Food Item</h1></td></tr>
                     <tr><td><hr></td></tr>
 
                    <?php
@@ -53,15 +53,15 @@ if(!isset($_COOKIE['status'])){
                             <table align="center" border="1" width="100%" height="100%"  >
                         
                                 
-                                 
+                                  
                                 <tr>
                                 <td width="30%">
                       <ul style="line-height:250%">
 
-                      <li><a href="restaurantManagerDashboard.php">Dashboard</a><br></li>
-                     <li><a href="restaurantManagerAddFoodItem.php">Add Food Item</a><br></li>
-                     <li><a href="restaurantManagerViewFoodItem.php">View Food Item</a><br></li>
-                     <li><a href="restaurantManagerViewOrderList.php">View Order List</a></li>
+                      <li><a href="restaurantOwnerDashboard.php">Dashboard</a><br></li>
+                     <li><a href="restaurantOwnerAddManager.php">Add Manager</a><br></li>
+                     <li><a href="restaurantOwnerAddFoodItem.php">Add Food Item</a><br></li>
+                     <li><a href="restaurantOwnerViewFoodItem.php">View Food Item</a></li>
                      <li><a href="logOut.php">LogOut</a></li>
 
                     </ul>
@@ -72,34 +72,40 @@ if(!isset($_COOKIE['status'])){
 
 
                         <td>
-                            <form method="post" action="restaurantManagerAddFoodItemCheck.php" enctype="">
-                                <table border="1">
-                                    <tr>
-                                        <td><b>Food ID:</b></td>
-                                        <td><input type='number' name='foodID' value=''></td>
-                                    </tr>
+                            <table border="1" align="center">
+                                <tr>
+                                    <td><b>Food ID</b></td>
+                                    <td><b>Food Name</b></td>
+                                    <td><b>Food Price</b></td>
+                                </tr>
+                                <tr>
+                                    <?php
+                                        $file = fopen("../restaurantManager/data/foodItems.txt",'r');
+                                        while(!feof($file)){
+                                            $data = fgets($file);
+                                            $user = explode('|', $data);
+                                            if(trim($user[3])==$_COOKIE['restaurantName']){
 
-                                    <tr>
-                                        <td><b>Food Name:</b></td>
-                                        <td><input type='text' name='foodName' value=''></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><b>Food Price:</b></td>
-                                        <td><input type='number' name='foodPrice' value=''></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td></td>
-                                        <td><input type='submit' name='submit' value='Add'>
-                                            <input type='reset' name='reset' value='Reset'></td>
-                                    </tr>
-
-
-                                </table>
-                            </form>
+                                                print("<tr><td>$user[0]</td><td>$user[1]</td><td>$user[2]</td>");
+                                            }
+                                        }
+                                    ?>
+                                </tr>
+                            </table>
                        </td>
                     </tr>
+                                
+                                 
+                               
+
+                                 
+
+                                 
+                                
+                                
+
+                                
+
                                 <tr>
                                     <td colspan="2"><hr></td>
                                 </tr>

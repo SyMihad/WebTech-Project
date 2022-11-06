@@ -2,6 +2,8 @@
 
 session_start();
 
+setcookie('restaurantSelect', $_GET['restaurantSelect'], time()+60*60*72, '/');
+
 if(!isset($_COOKIE['status'])){
   header('location: ../home.php?err=bad_request');
 }
@@ -77,11 +79,40 @@ if(!isset($_COOKIE['status'])){
                         </td>
 
                         <td align="top">
-                            <?php
-                                echo "Welcome ".$_COOKIE['username'];
-                                //print("Thanks for choosing our food court.To order food please go to Place Order page and make your desire order.");
-                            ?>
-                            <p>Thanks for choosing our food court. To order food please go to Place Order page and make your desire order.</p>
+                            <form method="post" action="customerOrderConfirm.php" enctype="">
+                                <table border="1">
+                                    <tr>
+                                        <td><b>Food Name</b></td>
+                                        <td><b>Price</b></td>
+                                        <td><b>Select</b></td>
+                                    </tr>
+                                    <?php
+                                        $file = fopen('../restaurantManager/data/foodItems.txt', 'r');
+                                        while(!feof($file)){
+                                            $data = fgets($file);
+                                            $user = explode('|', $data);
+                                            if(trim($user[3])==$_GET['restaurantSelect']){
+                                                print("<tr>
+                                                <td>$user[1]</td>
+                                                <td>$user[2]</td>
+                                                <td><input type='radio' name='foodSelect' value='$user[1]'></td>
+                                                </tr>");
+                                            }
+                                        }
+                                        
+                                    ?>
+
+                                    <tr>
+                                        <td colspan="3"><b>Quantity=</b> <input type='number' name='quantity' value='1'></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="3" align="center"><input type="submit" name="submit" value="Select"></td>
+                                    </tr>
+                                    
+                                </table>
+                                
+                            </form>
                        </td>
                     </tr>
 

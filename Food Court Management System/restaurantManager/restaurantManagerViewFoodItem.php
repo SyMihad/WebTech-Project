@@ -58,11 +58,10 @@ if(!isset($_COOKIE['status'])){
                                 <td width="30%">
                       <ul style="line-height:250%">
 
-                     <li><a href="restaurantManagerDashboard.php">Dashboard</a><br></li>
+                      <li><a href="restaurantManagerDashboard.php">Dashboard</a><br></li>
                      <li><a href="restaurantManagerAddFoodItem.php">Add Food Item</a><br></li>
                      <li><a href="restaurantManagerViewFoodItem.php">View Food Item</a><br></li>
                      <li><a href="restaurantManagerViewOrderList.php">View Order List</a></li>
-                     
                      <li><a href="logOut.php">LogOut</a></li>
 
                     </ul>
@@ -85,7 +84,10 @@ if(!isset($_COOKIE['status'])){
                                         while(!feof($file)){
                                             $data = fgets($file);
                                             $user = explode('|', $data);
-                                            print("<tr><td>$user[0]</td><td>$user[1]</td><td>$user[2]</td>");
+                                            if(trim($user[3])==$_COOKIE['restaurantName']){
+
+                                                print("<tr><td>$user[0]</td><td>$user[1]</td><td>$user[2]</td>");
+                                            }
                                         }
                                     ?>
                                 </tr>

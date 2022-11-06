@@ -58,10 +58,10 @@ if(!isset($_COOKIE['status'])){
                                 <td width="30%">
                       <ul style="line-height:250%">
 
-                      <li><a href="restaurantManagerDashboard.php">Dashboard</a><br></li>
-                     <li><a href="restaurantManagerAddFoodItem.php">Add Food Item</a><br></li>
-                     <li><a href="restaurantManagerViewFoodItem.php">View Food Item</a><br></li>
-                     <li><a href="restaurantManagerViewOrderList.php">View Order List</a></li>
+                      <li><a href="restaurantOwnerDashboard.php">Dashboard</a><br></li>
+                     <li><a href="restaurantOwnerAddManager.php">Add Manager</a><br></li>
+                     <li><a href="restaurantOwnerAddFoodItem.php">Add Food Item</a><br></li>
+                     <li><a href="restaurantOwnerViewFoodItem.php">View Food Item</a></li>
                      <li><a href="logOut.php">LogOut</a></li>
 
                     </ul>
@@ -72,7 +72,7 @@ if(!isset($_COOKIE['status'])){
 
 
                         <td>
-                            <form method="post" action="restaurantManagerAddFoodItemCheck.php" enctype="">
+                            <form method="post" action="restaurantOwnerAddFoodItemCheck.php" enctype="">
                                 <table border="1">
                                     <tr>
                                         <td><b>Food ID:</b></td>

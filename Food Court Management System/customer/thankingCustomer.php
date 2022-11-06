@@ -77,11 +77,7 @@ if(!isset($_COOKIE['status'])){
                         </td>
 
                         <td align="top">
-                            <?php
-                                echo "Welcome ".$_COOKIE['username'];
-                                //print("Thanks for choosing our food court.To order food please go to Place Order page and make your desire order.");
-                            ?>
-                            <p>Thanks for choosing our food court. To order food please go to Place Order page and make your desire order.</p>
+                            Thank you for ordering food. Your food will serve very soon.
                        </td>
                     </tr>
 

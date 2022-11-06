@@ -32,12 +32,10 @@ if(!isset($_COOKIE['status'])){
                                 <ul style="line-height:250%">
 
                                 <li><a href="customerDashboard.php">Dashboard</a><br></li>
-                                <li><a href="customerChoosingRestaurant.php">Place Order</a><br></li>
+                                <li><a href="customerOrder.php">Place Order</a><br></li>
                                 <li><a href="customerViewProfile.php">View Profile</a></li>
                                 <li><a href="customerEditProfile.php">Edit Profile</a></li>
-                                
                                 <li><a href="logOut.php">LogOut</a></li>
-
                                 </ul>
  
                         </td>

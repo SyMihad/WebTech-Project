@@ -70,7 +70,6 @@ if(!isset($_COOKIE['status'])){
                                 <li><a href="customerOrder.php">Place Order</a><br></li>
                                 <li><a href="customerViewProfile.php">View Profile</a></li>
                                 <li><a href="customerEditProfile.php">Edit Profile</a></li>
-                                
                                 <li><a href="logOut.php">LogOut</a></li>
 
                                 </ul>
@@ -78,35 +77,27 @@ if(!isset($_COOKIE['status'])){
                         </td>
 
                         <td align="top">
-                            <form method="get" action="customerOrderCheck.php" enctype="">
+                            <form method="get" action="customerSelectFoodItem.php" enctype="">
                                 <table border="1">
                                     <tr>
                                         <td><b>Restaurant Name</b></td>
-                                        <td>Food Name</td>
-                                        <td>Price</td>
+                                        <td>Logo</td>
                                         <td>Select</td>
                                     </tr>
                                     <?php
-                                        $file = fopen('../restaurantManager/data/foodItems.txt', 'r');
+                                        $file = fopen('../restaurantOwner/data/restaurant.txt', 'r');
                                         while(!feof($file)){
                                             $data = fgets($file);
                                             $user = explode('|', $data);
                                             print("<tr>
-                                            <td><img src='../restaurantOwner/data/$user[3].png' width='80px' height='80px'>$user[3]</td>
-                                            <td>$user[1]</td>
-                                            <td>$user[2]</td>
-                                            <td><input type='radio' name='restaurantSelect' value=$user[0][0]></td>
+                                            <td>$user[0]</td>
+                                            <td><img src='../restaurantOwner/data/$user[0].png' width='80px' height='80px'></td>
+                                            <td><input type='radio' name='restaurantSelect' value='$user[0]'></td>
                                             </tr>");
                                         }
                                     ?>
-
                                     <tr>
-                                        <td colspan="2"><b>Quantity</b></td>
-                                        <td colspan="2" align="center"><input type="number" name="quantity" value="1"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="4" align="center"><input type="submit" name="submit" value="Order"></td>
+                                        <td colspan="3" align="center"><input type="submit" name="submit" value="Select"></td>
                                     </tr>
                                     
                                 </table>

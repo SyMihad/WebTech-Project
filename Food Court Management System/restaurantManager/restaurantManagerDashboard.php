@@ -62,7 +62,6 @@ if(!isset($_COOKIE['status'])){
                      <li><a href="restaurantManagerAddFoodItem.php">Add Food Item</a><br></li>
                      <li><a href="restaurantManagerViewFoodItem.php">View Food Item</a><br></li>
                      <li><a href="restaurantManagerViewOrderList.php">View Order List</a></li>
-                     
                      <li><a href="logOut.php">LogOut</a></li>
 
                     </ul>

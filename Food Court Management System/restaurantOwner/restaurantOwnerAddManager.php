@@ -12,14 +12,14 @@ if(!isset($_COOKIE['status'])){
 
 <html>
     <head>
-        <title>Add Restaurant Owner</title>
+        <title>Add Restaurant Manager</title>
     </head>
     <body>
         
             <fieldset>
                 <legend><p  style="font-size:20px;">Food Court Management System</p></legend>
                 <table align="center" height="700px" width="700px"  border="1">
-                    <tr><td align="center"><h1>Add Restaurant Owner</h1></td></tr>
+                    <tr><td align="center"><h1>Add Restaurant Manager</h1></td></tr>
                     <tr><td><hr></td></tr>
 
                    <?php
@@ -58,23 +58,17 @@ if(!isset($_COOKIE['status'])){
                                 <td width="30%">
                       <ul style="line-height:250%">
 
-                      <li><a href="adminDashboard.php">Dashboard</a><br></li>
-                     <li><a href="adminAddingRestaurants.php">Add Restaurant</a><br></li>
-                     <li><a href="adminViewingRestaurants.php">View Restaurants</a><br></li>
-
-                     <li><a href="adminAddingRestaurantOwner.php">Add Restaurant Owner</a></li>
-                     <li><a href="adminViewingRestaurantOwner.php">View Restaurant Owner</a></li>
-
-                     <li><a href="adminAddingRestaurantManager.php">Add Restaurant Manager</a></li>
-                     <li><a href="adminViewingRestaurantManager.php">View Restaurant Manager</a></li>
-                     
+                      <li><a href="restaurantOwnerDashboard.php">Dashboard</a><br></li>
+                     <li><a href="restaurantOwnerAddManager.php">Add Manager</a><br></li>
+                     <li><a href="restaurantOwnerAddFoodItem.php">Add Food Item</a><br></li>
+                     <li><a href="restaurantOwnerViewFoodItem.php">View Food Item</a></li>
                      <li><a href="logOut.php">LogOut</a></li>
 
                     </ul>
  
                     </td>
                         <td>
-                        <form method="post" action="adminAddingRestaurantOwnerCheck.php" enctype="multipart/form-data">   
+                        <form method="post" action="restaurantOwnerAddingRestaurantManagerCheck.php" enctype="multipart/form-data">   
                         <table align="center">
                     
                             <tr>

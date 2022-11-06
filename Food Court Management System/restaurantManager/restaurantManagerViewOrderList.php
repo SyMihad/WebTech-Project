@@ -18,7 +18,7 @@ if(!isset($_COOKIE['status'])){
         
             <fieldset>
                 <legend><p  style="font-size:20px;">Food Court Management System</p></legend>
-                <table align="center" height="700px" width="700px"  border="1">
+                <table align="center" height="900px" width="900px"  border="1">
                     <tr><td align="center"><h1>Manager Dashboard</h1></td></tr>
                     <tr><td><hr></td></tr>
 
@@ -72,32 +72,26 @@ if(!isset($_COOKIE['status'])){
 
 
                         <td>
-                            <form method="post" action="restaurantManagerAddFoodItemCheck.php" enctype="">
-                                <table border="1">
+                            <table border="1" align="center">
                                     <tr>
-                                        <td><b>Food ID:</b></td>
-                                        <td><input type='number' name='foodID' value=''></td>
+                                        <td><b>Food Name</b></td>
+                                        <td><b>Quantity</b></td>
+                                        <td><b>Username</b></td>
                                     </tr>
-
                                     <tr>
-                                        <td><b>Food Name:</b></td>
-                                        <td><input type='text' name='foodName' value=''></td>
+                                        <?php
+                                            $file = fopen("../customer/data/foodOrderList.txt",'r');
+                                            while(!feof($file)){
+                                                $data = fgets($file);
+                                                $user = explode('|', $data);
+                                                if($user[2]==$_COOKIE['restaurantName']){
+
+                                                    print("<tr><td>$user[0]</td><td>$user[1]</td><td>$user[3]</td>");
+                                                }
+                                            }
+                                        ?>
                                     </tr>
-
-                                    <tr>
-                                        <td><b>Food Price:</b></td>
-                                        <td><input type='number' name='foodPrice' value=''></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td></td>
-                                        <td><input type='submit' name='submit' value='Add'>
-                                            <input type='reset' name='reset' value='Reset'></td>
-                                    </tr>
-
-
-                                </table>
-                            </form>
+                            </table>
                        </td>
                     </tr>
                                 <tr>
