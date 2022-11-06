@@ -74,35 +74,7 @@ if(!isset($_COOKIE['status'])){
 
 
                         <td>
-                        <table >    
-                      <tr><td colspan="2"> 
-                        <?php  if(isset($_COOKIE['username']))
-                                    {   if(file_exists("adminDP/".$_COOKIE['username'].".jpg"))
-                                                      {echo '<img  style="border:5px solid #000000; padding:3px; margin:5px"; src="adminDP/'.trim($_COOKIE['username']).'.jpg?t='.time().'" height="120px" width="120px"></img><br><br>';} 
-                            
-                                      else{            echo '<img  style="border:5px solid #000000; padding:3px; margin:5px"; src="default_dp.jpg" height="120px" width="120px"></img><br><br>';    }
-                                    }
-
-                                 else{echo '<img  style="border:5px solid #000000; padding:3px; margin:5px"; src="default_dp.jpg" height="120px" width="120px"></img><br><br>';}   
-                        
-                        ?> 
-                         </td></tr>
-
-                         <tr> <td> 
-                        <form method="POST" action="dpUploadCheck.php" enctype="multipart/form-data" >
-                                Change Profile Picture:  <input type="file" name="myfile" value="" />
-                          <input type="submit" name="submit" value="Update"/>
-                        </form>
-                     </td></tr>
-
-                     <tr> <td> <hr>  </td></tr>
-
-
-                      <tr><td style="padding:10px">Username: <?php echo $_COOKIE["username"]; ?></td></tr> 
-                      <tr><td style="padding:10px">Restaurants: </td> </tr>
-                      <tr><td style="padding:10px">FoodCourt Managers: </td> </tr>
-
-                       </table>
+                            <h1>Welcome Admin,</h1>
                        </td>
                     </tr>
                                 

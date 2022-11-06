@@ -65,7 +65,7 @@ if(!isset($_COOKIE['status'])){
                         <td>
                         <table >    
                       <tr><td colspan="2"> 
-                        <?php  if(isset($_COOKIE['restaurantName']))
+                        <?php  if(isset($_SESSION['restaurantName']))
                                     {    
                              
                                         echo '<img  style="border:5px solid #000000; padding:3px; margin:5px"; src="Blank.jpg" height="120px" width="120px"></img><br><br>';    
@@ -77,6 +77,7 @@ if(!isset($_COOKIE['status'])){
                          </td></tr>
 
                          <tr> <td> 
+                        
                         <form method="POST" action="restaurantDPUploadCheck.php" enctype="multipart/form-data" >
                                 Change Restaurant Logo:  <input type="file" name="myfile" value="" />
                           <input type="submit" name="submit" value="Update"/>

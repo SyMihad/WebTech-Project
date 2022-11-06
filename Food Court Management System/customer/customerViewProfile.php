@@ -1,4 +1,30 @@
 <?php
+    function removeLine($filePath){
+        $fileRead = fopen($filePath, 'r');
+        $readData[] = array();
+        $rowNum=0;
+        $i =0;
+        $willDelete = false;
+        while(!feof($fileRead)){
+            $data = fgets($fileRead);
+            $user = explode("|", $data);
+            $readData[$i]=$data;
+            if(trim($user[2])==''){
+                $willDelete = true;
+                $rowNum = $i;
+            }
+            $i++;
+        }
+        fclose($fileRead);
+        if($willDelete){
+            $file_out = file($filePath);
+            unset($file_out[$rowNum]);
+            file_put_contents($filePath, implode("", $file_out));
+        }
+    }
+?>
+
+<?php
 
 session_start();
 
@@ -44,23 +70,30 @@ if(!isset($_COOKIE['status'])){
 
                         <td align="top">
                             <?php
+                                removeLine('data/customer.txt');
                                 $file = fopen('data/customer.txt', 'r');
                                 $status = false;
+                                $i=1;
                                 while(!feof($file)){
                                     $data = fgets($file);
-                                    $user = explode('|', $data);
-                                    if(trim($user[2])==$_COOKIE['username']){
-                                        break;
+                                    
+                                    if($user = explode('|', $data)){
+                                        
+                                        if(trim($user[2])==$_COOKIE['username']){
+                                            break;
+                                        }
                                     }
+                                    
+                                    $i++;
                                 }
                             ?>
                             <table>
                                 <?php
-                                    print("<tr><td><b>First Name: </b></td><td>$user[0]</td></tr>");
-                                    print("<tr><td><b>Last Name: </b></td><td>$user[1]</td></tr>");
-                                    print("<tr><td><b>User Name: </b></td><td>$user[2]</td></tr>");
-                                    print("<tr><td><b>Email: </b></td><td>$user[3]</td></tr>");
-                                    print("<tr><td><b>Phone Number: </b></td><td>$user[4]</td></tr>");
+                                    print("<tr><td><b>First Name: </b></td><td><input type=text name=firstName value=$user[0] readonly></td></tr>");
+                                    print("<tr><td><b>Last Name: </b></td><td><input type=text name=lastName value=$user[1] readonly></td></tr>");
+                                    print("<tr><td><b>User Name: </b></td><td><input type=text name=userName value=$user[2] readonly></td></tr>");
+                                    print("<tr><td><b>Email: </b></td><td><input type=email name=userEmail value=$user[3] readonly></td></tr>");
+                                    print("<tr><td><b>Phone Number: </b></td><td><input type=tel name=userPhoneNum value=$user[4] readonly></td></tr>");
                                 ?>
                             </table>
                        </td>

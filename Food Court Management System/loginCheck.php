@@ -38,6 +38,8 @@ else if($userType=='admin'){
         $status = true;
     }
     if($status){
+        setcookie('status', 'true', time()+60*60*72, '/');
+        setcookie('username', $username, time()+60*60*72, '/');
         header('location: admin/adminDashboard.php');
     }
     else{

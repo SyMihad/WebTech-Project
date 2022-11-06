@@ -62,7 +62,7 @@ if(!isset($_COOKIE['status'])){
                                     print("<tr><td><b>User Name: </b></td><td><input type=text name=userName value=$user[2]></td></tr>");
                                     print("<tr><td><b>Email: </b></td><td><input type=email name=userEmail value=$user[3]></td></tr>");
                                     print("<tr><td><b>Phone Number: </b></td><td><input type=tel name=userPhoneNum value=$user[4]></td></tr>");
-                                    print("<tr><td>Password:</td><td><input type=password name=userPassword value=$user[5]></td></tr>");
+                                    print("<tr><td>Password:</td><td><input type=password name=userPassword></td></tr>");
                                     print("<tr><td>Confirm Password:</td><td><input type=password name=userConfirmPassword></td></tr>");
                                     print("<tr><td></td><td><input type=submit value=Update> <input type=reset name= value=Reset></td></tr>");
                                     ?>

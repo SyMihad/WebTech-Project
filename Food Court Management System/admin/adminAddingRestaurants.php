@@ -95,18 +95,12 @@ if(!isset($_COOKIE['status'])){
                      <tr> <td colspan="2"> <hr>  </td></tr>
 
                    
-
-
-
-
                       <tr><td style="padding:10px">Restaurant Name:  </td>  <td><input style="width: 230px; height: 30px;" type="text"     name="restaurantName"          value=""       placeholder="Restaurant Name">  </td></tr> 
-                      <tr><td style="padding:10px">Restaurant Address: </td><td><input style="width: 230px; height: 30px;" type="text"     name="restaurantAddress"       value=""       placeholder="Restaurant Adress"> </td> </tr>
-                      <tr><td style="padding:10px">Balance (Tk.): </td><td>     <input style="width: 230px; height: 30px;" type="number"   name="restaurantBalance"       value="100000" placeholder="Restaurant Balance"> </td> </tr>
-                      <tr><td style="padding:10px">Owner Userame: </td><td>     <input style="width: 230px; height: 30px;" type="text"     name="restaurantOwnerName"     value=""       placeholder="Restaurant Owner's Name"> </td> </tr>
-                      <tr><td style="padding:10px">Owner E-mail:  </td><td>     <input style="width: 230px; height: 30px;" type="text"     name="restaurantOwnerEmail"    value=""       placeholder="Restaurant Owner's E-mail"> </td> </tr>
-                      <tr><td style="padding:10px">Owner Password: </td><td>    <input style="width: 230px; height: 30px;" type="password" name="restaurantOwnerPassword" value=""       placeholder="Restaurant Owner's Password"> </td> </tr>
+                      <tr><td style="padding:10px">Restaurant ID: </td><td><input style="width: 230px; height: 30px;" type="number"     name="restaurantID"       value=""       placeholder="Restaurant ID"> </td> </tr>
+                      <tr><td style="padding:10px">Owner Name: </td><td>     <input style="width: 230px; height: 30px;" type="text"     name="restaurantOwnerName"     value=""       placeholder="Restaurant Owner's Name"> </td> </tr>
+                    
                      
-                      <tr><td align="center" colspan="2" style="padding:10px"> <input type="submit" name="" value="Register"> &nbsp <input type="reset" name="" value="Reset"> </td></tr>
+                      <tr><td align="center" colspan="2" style="padding:10px"> <input type="submit" name="" value="Add"> &nbsp <input type="reset" name="" value="Reset"> </td></tr>
                       </form>
                     </table>
                        </td>
