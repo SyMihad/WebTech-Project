@@ -1,0 +1,4 @@
+Burger King|1|Mihad
+Chillox|2|Shahriar
+Sultans Dine|3|Nousheen
+Pizza Burg|4|Shimu

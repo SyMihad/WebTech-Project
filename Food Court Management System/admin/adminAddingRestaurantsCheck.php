@@ -13,11 +13,10 @@ if($restaurantName == "" || $restaurantID == "" || $restaurantOwnerName == "" ){
 }
 
 else{
-
     $restaurant_record= "\r\n".$restaurantName."|".$restaurantID."|".$restaurantOwnerName; 
-    $_SESSION['restaurantName']=$restaurantName;
-    $file =fopen('../restaurantOwner/data/restaurantOwners.txt','a');
-    fwrite($file,  $restaurant_record."\r\n");    
+    setcookie('restaurantName', $restaurantName, time()+60*60*72, '/');
+    $file =fopen('../restaurantOwner/data/restaurant.txt','a');
+    fwrite($file,  $restaurant_record);    
     fclose($file);
     header('location: adminChoosingRestaurantImage.php?message=restaurant_added');
 
