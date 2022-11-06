@@ -12,14 +12,14 @@ if(!isset($_COOKIE['status'])){
 
 <html>
     <head>
-        <title>Admin Dashboard</title>
+        <title>Manager Dashboard</title>
     </head>
     <body>
         
             <fieldset>
                 <legend><p  style="font-size:20px;">Food Court Management System</p></legend>
-                <table align="center" height="900px" width="900px"  border="1">
-                    <tr><td align="center"><h1>Admin Dashboard</h1></td></tr>
+                <table align="center" height="700px" width="700px"  border="1">
+                    <tr><td align="center"><h1>Manager Dashboard</h1></td></tr>
                     <tr><td><hr></td></tr>
 
                    <?php
@@ -58,15 +58,10 @@ if(!isset($_COOKIE['status'])){
                                 <td width="30%">
                       <ul style="line-height:250%">
 
-                     <li><a href="adminDashboard.php">Dashboard</a><br></li>
-                     <li><a href="adminAddingRestaurants.php">Add Restaurant</a><br></li>
-                     <li><a href="adminViewingRestaurants.php">View Restaurants</a><br></li>
-
-                     <li><a href="adminAddingRestaurantOwner.php">Add Restaurant Owner</a></li>
-                     <li><a href="adminViewingRestaurantOwner.php">View Restaurant Owner</a></li>
-
-                     <li><a href="adminAddingRestaurantManager.php">Add Restaurant Manager</a></li>
-                     <li><a href="adminViewingRestaurantManager.php">View Restaurant Manager</a></li>
+                     <li><a href="restaurantManagerDashboard.php">Dashboard</a><br></li>
+                     <li><a href="restaurantManagerAddFoodItem.php">Add Food Item</a><br></li>
+                     <li><a href="restaurantManagerViewFoodItem.php">View Food Item</a><br></li>
+                     <li><a href="restaurantManagerViewOrderList.php">View Order List</a></li>
                      
                      <li><a href="logOut.php">LogOut</a></li>
 
@@ -78,21 +73,34 @@ if(!isset($_COOKIE['status'])){
 
 
                         <td>
-                            <h1>Welcome Admin,</h1>
+                            <form method="post" action="restaurantManagerAddFoodItemCheck.php" enctype="">
+                                <table border="1">
+                                    <tr>
+                                        <td><b>Food ID:</b></td>
+                                        <td><input type='number' name='foodID' value=''></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><b>Food Name:</b></td>
+                                        <td><input type='text' name='foodName' value=''></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><b>Food Price:</b></td>
+                                        <td><input type='number' name='foodPrice' value=''></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td></td>
+                                        <td><input type='submit' name='submit' value='Add'>
+                                            <input type='reset' name='reset' value='Reset'></td>
+                                    </tr>
+
+
+                                </table>
+                            </form>
                        </td>
                     </tr>
-                                
-                                 
-                               
-
-                                 
-
-                                 
-                                
-                                
-
-                                
-
                                 <tr>
                                     <td colspan="2"><hr></td>
                                 </tr>

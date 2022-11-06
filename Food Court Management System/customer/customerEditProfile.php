@@ -56,14 +56,23 @@ if(!isset($_COOKIE['status'])){
                             ?>
                             <table>
                                 <form method="post" action="customerEditProfileCheck.php" enctype="">
-                                    <?php
+                                    <?php 
                                     print("<tr><td><b>First Name: </b></td><td><input type=text name=firstName value=$user[0]></td></tr>");
                                     print("<tr><td><b>Last Name: </b></td><td><input type=text name=lastName value=$user[1]></td></tr>");
                                     print("<tr><td><b>User Name: </b></td><td><input type=text name=userName value=$user[2]></td></tr>");
-                                    print("<tr><td><b>Email: </b></td><td><input type=email name=userEmail value=$user[3]></td></tr>");
-                                    print("<tr><td><b>Phone Number: </b></td><td><input type=tel name=userPhoneNum value=$user[4]></td></tr>");
-                                    print("<tr><td>Password:</td><td><input type=password name=userPassword></td></tr>");
-                                    print("<tr><td>Confirm Password:</td><td><input type=password name=userConfirmPassword></td></tr>");
+                                    print("<tr>
+                                    <td><b>Gender</b></td>
+                                    <td>
+                                        <input type='radio' name='gender' value='male'/>Male
+                                        <input type='radio' name='gender' value='female'/>Female
+                                        <input type='radio' name='gender' value='other'/>Other
+                                    </td>
+                                    </tr>");
+                                    print("<tr><td>Birthdate:</td><td><input type='date' name='birthDate' value=$user[4]></td></tr>");
+                                    print("<tr><td><b>Email: </b></td><td><input type=email name=userEmail value=$user[5]></td></tr>");
+                                    print("<tr><td><b>Phone Number: </b></td><td><input type=tel name=userPhoneNum value=$user[6]></td></tr>");
+                                    print("<tr><td>Password:</td><td><input type=password name=userPassword required></td></tr>");
+                                    print("<tr><td>Confirm Password:</td><td><input type=password name=userConfirmPassword required></td></tr>");
                                     print("<tr><td></td><td><input type=submit value=Update> <input type=reset name= value=Reset></td></tr>");
                                     ?>
                                 </form>

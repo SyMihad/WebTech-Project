@@ -86,12 +86,14 @@ if(!isset($_COOKIE['status'])){
                                     
                                     $i++;
                                 }
-                            ?>
+                            ?>  
                             <table>
                                 <?php
                                     print("<tr><td><b>First Name: </b></td><td><input type=text name=firstName value=$user[0] readonly></td></tr>");
                                     print("<tr><td><b>Last Name: </b></td><td><input type=text name=lastName value=$user[1] readonly></td></tr>");
                                     print("<tr><td><b>User Name: </b></td><td><input type=text name=userName value=$user[2] readonly></td></tr>");
+                                    print("<tr><td><b>User Name: </b></td><td><input type=text name=gender value=$user[3] readonly></td></tr>");
+                                    print("<tr><td><b>User Name: </b></td><td><input type=date name=birthDate value=$user[4] readonly></td></tr>");
                                     print("<tr><td><b>Email: </b></td><td><input type=email name=userEmail value=$user[3] readonly></td></tr>");
                                     print("<tr><td><b>Phone Number: </b></td><td><input type=tel name=userPhoneNum value=$user[4] readonly></td></tr>");
                                 ?>

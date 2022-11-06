@@ -1,3 +1,1 @@
-default|default|default|default@degault.com|012345|default
-sy|mihad|symihad|symihad@symihad.com|0112233|123
-Shajaratul|Yakin|syakin|syakin@syakin.com|012345|123
+Sy|Mihad|symihad|male|2022-11-09|symihad@symihad.com|123456789|123

@@ -12,14 +12,14 @@ if(!isset($_COOKIE['status'])){
 
 <html>
     <head>
-        <title>Admin Dashboard</title>
+        <title>All Restaurant Manager</title>
     </head>
     <body>
         
             <fieldset>
                 <legend><p  style="font-size:20px;">Food Court Management System</p></legend>
-                <table align="center" height="900px" width="900px"  border="1">
-                    <tr><td align="center"><h1>Admin Dashboard</h1></td></tr>
+                <table align="center"   border="1">
+                    <tr><td align="center"><h1>All Restaurant Manager</h1></td></tr>
                     <tr><td><hr></td></tr>
 
                    <?php
@@ -61,12 +61,8 @@ if(!isset($_COOKIE['status'])){
                      <li><a href="adminDashboard.php">Dashboard</a><br></li>
                      <li><a href="adminAddingRestaurants.php">Add Restaurant</a><br></li>
                      <li><a href="adminViewingRestaurants.php">View Restaurants</a><br></li>
-
                      <li><a href="adminAddingRestaurantOwner.php">Add Restaurant Owner</a></li>
                      <li><a href="adminViewingRestaurantOwner.php">View Restaurant Owner</a></li>
-
-                     <li><a href="adminAddingRestaurantManager.php">Add Restaurant Manager</a></li>
-                     <li><a href="adminViewingRestaurantManager.php">View Restaurant Manager</a></li>
                      
                      <li><a href="logOut.php">LogOut</a></li>
 
@@ -78,21 +74,28 @@ if(!isset($_COOKIE['status'])){
 
 
                         <td>
-                            <h1>Welcome Admin,</h1>
+                            <table border="1">
+                                <tr>
+                                    <td><b>First Name</b></td>
+                                    <td><b>Last Name</b></td>
+                                    <td><b>Username</b></td>
+                                    <td><b>Gender</b></td>
+                                    <td><b>Restaurant Name</b></td>
+                                    <td><b>Email</b></td>
+                                    <td><b>Phone Number</b></td>
+                                    <td><b>Profile Picture</b></td>
+                                </tr>
+                                <?php
+                                    $file = fopen("../restaurantManager/data/restuarantManagers.txt",'r');
+                                    while(!feof($file)){
+                                        $data = fgets($file);
+                                        $user = explode('|', $data);
+                                        print("<tr><td>$user[0]</td><td>$user[1]</td><td>$user[2]</td><td>$user[3]</td><td>$user[4]</td><td>$user[5]</td><td>$user[6]</td><td><img src='../restaurantOwner/data/pictures/$user[2].png' width='80px' height='80px'></td></tr>");
+                                    }
+                                ?>
+                            </table>
                        </td>
                     </tr>
-                                
-                                 
-                               
-
-                                 
-
-                                 
-                                
-                                
-
-                                
-
                                 <tr>
                                     <td colspan="2"><hr></td>
                                 </tr>

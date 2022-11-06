@@ -78,11 +78,39 @@ if(!isset($_COOKIE['status'])){
                         </td>
 
                         <td align="top">
-                            <?php
-                                echo "Welcome ".$_COOKIE['username'];
-                                //print("Thanks for choosing our food court.To order food please go to Place Order page and make your desire order.");
-                            ?>
-                            <p>Thanks for choosing our food court. To order food please go to Place Order page and make your desire order.</p>
+                            <form method="get" action="customerOrderCheck.php" enctype="">
+                                <table border="1">
+                                    <tr>
+                                        <td><b>Restaurant Name</b></td>
+                                        <td>Food Name</td>
+                                        <td>Price</td>
+                                        <td>Select</td>
+                                    </tr>
+                                    <?php
+                                        $file = fopen('../restaurantManager/data/foodItems.txt', 'r');
+                                        while(!feof($file)){
+                                            $data = fgets($file);
+                                            $user = explode('|', $data);
+                                            print("<tr>
+                                            <td><img src='../restaurantOwner/data/$user[3].png' width='80px' height='80px'>$user[3]</td>
+                                            <td>$user[1]</td>
+                                            <td>$user[2]</td>
+                                            <td><input type='radio' name='restaurantSelect' value=$user[0][0]></td>
+                                            </tr>");
+                                        }
+                                    ?>
+
+                                    <tr>
+                                        <td colspan="2"><b>Quantity</b></td>
+                                        <td colspan="2" align="center"><input type="number" name="quantity" value="1"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="4" align="center"><input type="submit" name="submit" value="Order"></td>
+                                    </tr>
+                                    
+                                </table>
+                            </form>
                        </td>
                     </tr>
 

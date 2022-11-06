@@ -35,6 +35,20 @@ if(isset($_GET['err'])){
                         <td>User Name:</td>
                         <td><input type="text" name="userName" placeholder="user name"></td>
                     </tr>
+ 
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <input type="radio" name="gender" value="male"/>Male
+                            <input type="radio" name="gender" value="female"/>Female
+                            <input type="radio" name="gender" value="other"/>Other
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Birthdate:</td>
+                        <td><input type="date" name="birthDate"></td>
+                    </tr>
 
                     <tr>
                         <td>Email:</td>

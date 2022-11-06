@@ -41,14 +41,14 @@ if(isset($_GET['err'])){
                                     </td>
                                 </tr>
                                 
-                                <tr>
+                                <!-- <tr>
                                     <td>
                                         <input type="radio" name="userType" value="foodCourtManager">
                                     </td>
                                     <td>
                                         <b>Food Court Manager</b>
                                     </td>
-                                </tr>
+                                </tr> -->
                                 
                                 <tr>
                                     <td>
